@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('boxes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('box_id');
+            $table->string('code');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

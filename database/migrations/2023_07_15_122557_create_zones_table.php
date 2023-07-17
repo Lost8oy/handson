@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('zones', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('building_id');
+            $table->string('denomination');
+            $table->string('floor');
+            $table->string('description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

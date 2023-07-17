@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('shelves', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('unit_id');
+            $table->string('code');
+            $table->string('description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

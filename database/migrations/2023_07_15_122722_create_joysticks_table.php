@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('joysticks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('item_id');
             $table->string('inventory_number');
             $table->string('serial_number');
-            $table->string('model');
             $table->foreignId('manufacturer_id');
+            $table->string('model');
             $table->text('description');
             $table->timestamps();
             $table->softDeletes();

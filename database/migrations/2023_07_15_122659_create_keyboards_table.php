@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('serial_number');
             $table->foreignId('manufacturer_id')->constrained();
             $table->string('model');
+            $table->string('layout');
+            $table->string('switch');
             $table->text('description');
             $table->timestamps();
             $table->softDeletes();

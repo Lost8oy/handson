@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('manufacturers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('country_id')->constrained();
+            $table->foreignId('country_id');
             $table->string('link');
             $table->text('description');
             $table->timestamps();

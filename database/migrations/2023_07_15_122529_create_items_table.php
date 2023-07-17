@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('model_id');
+            $table->foreignId('image_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

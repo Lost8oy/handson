@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('keyboards', function (Blueprint $table) {
             $table->id();
+            $table->string('inventory_number');
+            $table->string('serial_number');
+            $table->foreignId('manufacturer_id')->constrained();
+            $table->string('model');
+            $table->text('description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
